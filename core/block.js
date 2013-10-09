@@ -391,18 +391,7 @@ Blockly.Block.prototype.moveBy = function(dx, dy) {
  */
 Blockly.Block.prototype.getHeightWidth = function() {
   try {
-      if (navigator.userAgent.indexOf("MSIE") >= 0 || navigator.userAgent.indexOf("Trident") >= 0) {
-          this.getSvgRoot().style.display = "inline";   /* reqd for IE */
-          var bBox = {
-              x: this.getSvgRoot().getBBox().x,
-              y: this.getSvgRoot().getBBox().y,
-              width: this.getSvgRoot().scrollWidth,
-              height: this.getSvgRoot().scrollHeight
-          };
-      }
-      else{
-      var bBox = this.getSvgRoot().getBBox();
-      }
+    var bBox = this.getSvgRoot().getBBox();
   } catch (e) {
     // Firefox has trouble with hidden elements (Bug 528969).
     return {height: 0, width: 0};
