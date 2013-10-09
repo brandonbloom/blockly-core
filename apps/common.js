@@ -79,7 +79,7 @@ BlocklyApps.getLang = function() {
     }
   }
   // Third choice: The browser's language.
-  lang = navigator.language;
+  lang = window.navigator.language;
   if (BlocklyApps.LANGUAGES[lang]) {
     return lang;
   }
